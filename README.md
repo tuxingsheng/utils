@@ -20,5 +20,8 @@ sha1(s)                         sha1加密
 base64(aInput)                  base64加密
 unbase64(str)                   base64解密
 md5(string)                     md5加密
-
+cookie.set(name, value, times)  添加cookie
+cookie.get(name)                获取cookie
+cookie.remove(name)             删除cookie
+cookie.clearCookie()            删除所有cookie
 

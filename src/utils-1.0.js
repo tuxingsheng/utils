@@ -119,7 +119,6 @@
          * @name queryRootSearch
          * @type function
          * @explain 解析客户端location search，转换成key-value的对象
-         * @return 如果为空，返回null
          * */
         queryRootSearch: function (url) {
             var req_href = url || window.location.href,
@@ -644,6 +643,38 @@
                 d = md5_AddUnsigned(d, DD);
             }
             return (md5_WordToHex(a) + md5_WordToHex(b) + md5_WordToHex(c) + md5_WordToHex(d)).toLowerCase();
+        },
+        /*
+         * @name cookie
+         * @type object
+         * @explain cookie的增删改查
+         * @param {Function} set  添加cookie
+         * @param {Function} get  获取cookie
+         * @param {Function} remove  删除cookie
+         * @param {Function} clearCookie  删除所有cookie
+         * */
+        cookie: {
+            set: function (name, value, times) {
+                var date = new Date();
+                date.setTime(date.getTime() + times * 1000);
+                document.cookie = name + '=' + escape(value) + ';expires=' + date.toGMTString() + ';path=/';
+            },
+            get: function (name) {
+                var arr, reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
+                arr = document.cookie.match(reg);
+                return arr ? arr[2] : null;
+            },
+            remove: function (name) {
+                utils.cookie.set(name, '', -1);
+            },
+            clearCookie: function () {
+                var names = document.cookie.match(/[^ =;]+(?=\=)/g);
+                if (names) {
+                    for (var i = names.length; i--;) {
+                        utils.cookie.remove(names[i]);
+                    }
+                }
+            }
         }
     };
 

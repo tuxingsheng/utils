@@ -44,6 +44,18 @@
     console.log('base64加密--> ', b64);
     console.log('base64解密--> ', utils.unbase64(b64));
     console.log('md5加密--> ', utils.md5('123456'));
+    utils.cookie.set('tuye', '88888888', 3600);
+    utils.cookie.set('aaa', '88888888', 3600);
+    utils.cookie.set('bbb', '88888888', 3600);
+    console.log('获取cookie--> ', utils.cookie.get('tuye'));
+    setTimeout(function () {
+        utils.cookie.remove('tuye');
+        console.log('cookie已被删除');
+    }, 5000);
+    setTimeout(function () {
+        utils.cookie.clearCookie();
+        console.log('所有cookie已被删除');
+    }, 10000);
 </script>
 </body>
 </html>
