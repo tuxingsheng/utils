@@ -9,9 +9,6 @@ isEmpty             是否为空，支持检测数组、对象和字符串
 extend              对象拷贝
 each                each循环
 trim                去掉左右空格
-
-
-
-
-
-
+resolveRootSearch   解析客户端location search参数
+device              获取浏览器信息
+formatDate          时间戳转换为字符串时间格式
