@@ -1,5 +1,9 @@
 'use strict';
-
+/*
+ * 原生js常用工具函数 - utils
+ * @author          涂兴声
+ * @createDate      2016/08/18
+ * */
 (function (win, doc) {
     var utils = {
         /*
