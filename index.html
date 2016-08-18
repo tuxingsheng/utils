@@ -16,6 +16,7 @@
     var t4 = ['aaa', 'mmm'];
     var t5 = new Date().getTime();
     console.log(utils);
+    console.log('是否是整数--> ', utils.isInteger(9999));
     console.log('是否是数组--> ', utils.isArray({}));
     console.log('是否是字符串--> ', utils.isString([]));
     console.log('是否是对象--> ', utils.isObject(t1));
@@ -32,9 +33,10 @@
         console.log('循环遍历数组--> ', i, e);
     });
     console.log('search解析结果--> ', utils.resolveRootSearch('aaa'));
-    console.log('浏览器版本信息---> ', utils.device());
-    console.log('时间格式转换---> ', utils.formatDate(t5, 'yyyy-MM-dd HH-mm-ss'));
-    console.log('时间格式转换---> ', utils.formatDate(t5, 'yyyy/MM/dd HH/mm/ss'));
+    console.log('浏览器版本信息--> ', utils.device());
+    console.log('时间格式转换--> ', utils.formatDate(t5, 'yyyy-MM-dd HH-mm-ss'));
+    console.log('时间格式转换--> ', utils.formatDate(t5, 'yyyy/MM/dd HH/mm/ss'));
+    console.log('uuid--> ', utils.uuid());
 </script>
 </body>
 </html>
