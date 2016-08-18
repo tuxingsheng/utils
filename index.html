@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工具函数</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<script src="./src/utils-1.0.js"></script>
+<script>
+    var t1 = {'aaa': 'ccc'};
+    var t2 = ' hello, world ';
+    var t3 = {'bbb': 'vvv'};
+    var t4 = ['aaa', 'mmm'];
+    console.log(utils);
+    console.log('是否是数组--> ', utils.isArray({}));
+    console.log('是否是字符串--> ', utils.isString([]));
+    console.log('是否是对象--> ', utils.isObject(t1));
+    console.log('对象是否有该属性--> ', utils.hasOwn(t1, 'aaa'));
+    console.log('去掉左右空格--> ', utils.trim(t2));
+    console.log('对象拷贝--> ', utils.extend(t1, t3));
+    console.log('是否为空--> ', utils.isEmpty({}));
+    console.log('是否为空--> ', utils.isEmpty(t2));
+    console.log('是否为空--> ', utils.isEmpty([]));
+    utils.each(t3, function (i, e) {
+        console.log('循环遍历对象--> ', i, e);
+    });
+    utils.each(t4, function (i, e) {
+        console.log('循环遍历数组--> ', i, e);
+    });
+
+
+</script>
+</body>
+</html>
