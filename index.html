@@ -37,6 +37,12 @@
     console.log('时间格式转换--> ', utils.formatDate(t5, 'yyyy-MM-dd HH-mm-ss'));
     console.log('时间格式转换--> ', utils.formatDate(t5, 'yyyy/MM/dd HH/mm/ss'));
     console.log('uuid--> ', utils.uuid());
+    console.log('随机数--> ', utils.getRandomNum(100, 500));
+    console.log('sha1加密--> ', utils.sha1('123456'));
+    var b64 = utils.base64('123456');
+    console.log('base64加密--> ', b64);
+    console.log('base64解密--> ', utils.unbase64(b64));
+    console.log('md5加密--> ', utils.md5('123456'));
 </script>
 </body>
 </html>
