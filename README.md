@@ -11,6 +11,7 @@ extend(to, from)                对象拷贝
 each(obj, fn)                   each循环
 trim(str)                       去掉左右空格
 resolveRootSearch(str)          解析客户端location search参数
+queryRootSearch(str)            解析客户端location search参数,转换成key-value的对象，如：queryRootSearch(http://www.baidu.com?aaa=666&bbb=999) ---> {aaa : 666,bbb : 999}
 device()                        获取浏览器信息
 formatDate(value, format)       时间戳转换为字符串时间格式
 uuid()                          随机的十六进制数生成一个伪GUID

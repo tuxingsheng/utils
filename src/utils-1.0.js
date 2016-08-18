@@ -116,6 +116,26 @@
             return utils.isEmpty(msg) ? null : msg[1];
         },
         /*
+         * @name queryRootSearch
+         * @type function
+         * @explain 解析客户端location search，转换成key-value的对象
+         * @return 如果为空，返回null
+         * */
+        queryRootSearch: function (url) {
+            var req_href = url || window.location.href,
+                req_url = /^[^\?]+\?([\w\W]+)$/,
+                req_parse = /([^&=]+)=([\w\W]*?)(&|$|#)/g,
+                arr_url = req_url.exec(req_href),
+                ret = {};
+            if (arr_url && arr_url[1]) {
+                var str_para = arr_url[1], result;
+                while ((result = req_parse.exec(str_para)) != null) {
+                    ret[result[1]] = result[2];
+                }
+            }
+            return ret;
+        },
+        /*
          * 获取浏览器信息
          * @param {String} pc 是否是pc
          * @param {String} os 浏览器信息
