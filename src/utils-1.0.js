@@ -111,8 +111,9 @@
          * @explain 解析客户端location search参数
          * @return 如果为空，返回null
          * */
-        resolveRootSearch: function (str) {
-            var msg = window.location.search.match(new RegExp('[\?\&]' + (str) + '=([^\&]+)', 'i'));
+        resolveRootSearch: function (str, sea) {
+            sea = sea || window.location.search;
+            var msg = sea.match(new RegExp('[\?\&]' + (str) + '=([^\&]+)', 'i'));
             return utils.isEmpty(msg) ? null : msg[1];
         },
         /*

@@ -10,7 +10,7 @@ isEmpty(obj)                    是否为空，支持检测数组、对象和字
 extend(to, from)                对象拷贝
 each(obj, fn)                   each循环
 trim(str)                       去掉左右空格
-resolveRootSearch(str)          解析客户端location search参数
+resolveRootSearch(str,sea)      解析客户端location search参数，获取某个key的value值，如：resolveRootSearch('aaa', '?aaa=666&bbb=999) ---> 666
 queryRootSearch(str)            解析客户端location search参数,转换成key-value的对象，如：queryRootSearch(http://www.baidu.com?aaa=666&bbb=999) ---> {aaa : 666,bbb : 999}
 device()                        获取浏览器信息
 formatDate(value, format)       时间戳转换为字符串时间格式
