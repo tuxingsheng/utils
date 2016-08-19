@@ -675,6 +675,58 @@
                     }
                 }
             }
+        },
+        /*
+         * @name sessionStore
+         * @type object
+         * @explain sessionStore的增删改查
+         * @param {Function} set  添加sessionStore
+         * @param {Function} get  获取sessionStore
+         * @param {Function} remove  删除sessionStore
+         * @param {Function} clearCookie  删除所有cookie
+         * */
+        sessionStore: {
+            /*
+             * 添加或设置sessionStore
+             * @param {String} 名称
+             * @param {String|Object} 数据
+             * */
+            set: function (n, v) {
+                v = ( typeof v === 'object' ? JSON.stringify(v) : v );
+                sessionStorage.setItem(n, v);
+            },
+            /*
+             * 获取sessionStore
+             * @param {String} 名称
+             * */
+            get: function (n) {
+                /* 匹配对象和数组 */
+                var re = /^\{|\[/gi,
+                    v = sessionStorage.getItem(n);
+                return re.test(v) ? JSON.parse(v) : v;
+            },
+            /*
+             * 删除sessionStore
+             * @param {String} 名称
+             * */
+            remove: function (n) {
+                sessionStorage.removeItem(n);
+            },
+            /*
+             * 清空所有sessionStore
+             * */
+            clear: function () {
+                sessionStorage.clear();
+            },
+            /*
+             * 遍历所有sessionStore(枚举)
+             * @param {Function} 回调函数参数(key,value)
+             * */
+            each: function (fn) {
+                for (var i = 0; i < sessionStorage.length; i++) {
+                    fn.call(this, sessionStorage.key(i), sessionStorage[sessionStorage.key(i)]);
+                }
+            }
         }
     };
 

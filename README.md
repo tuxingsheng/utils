@@ -24,4 +24,9 @@ cookie.set(name, value, times)  添加cookie
 cookie.get(name)                获取cookie
 cookie.remove(name)             删除cookie
 cookie.clearCookie()            删除所有cookie
+sessionStore.set(n,v)           添加或设置sessionStore
+sessionStore.get(n)             获取sessionStore
+sessionStore.remove(n)          删除sessionStore
+sessionStore.clear()            清空所有sessionStore
+sessionStore.each(fn)           遍历所有sessionStore(枚举)
 
